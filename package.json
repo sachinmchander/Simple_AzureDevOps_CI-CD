@@ -1,0 +1,15 @@
+{
+  "name": "simple_azuredevops_ci-cd",
+  "version": "1.0.0",
+  "description": "Running a simple Node.js App on Azure DevOps",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
