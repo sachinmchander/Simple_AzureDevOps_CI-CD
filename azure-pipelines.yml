@@ -5,12 +5,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  -task: PowerShell@2
-   inputs:
-    version: '14.x'
-    displayName: 'Install Node.js'
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+  displayName: 'Install Node.js'
 
- - script: |
+- script: |
     npm install
     npm run build
   displayName: 'Install dependencies and build'
@@ -20,3 +20,4 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+  displayName: 'Publish Artifacts'
