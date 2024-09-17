@@ -11,7 +11,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install --force 
+    npm install --force
     if [ $? -ne 0 ]; then
       echo "npm install failed"; 
       exit 1; 
