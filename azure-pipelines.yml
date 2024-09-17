@@ -11,12 +11,13 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
-    npm install || { echo "npm install failed"; exit 1; }
+    npm install --force 
+    if [ $? -ne 0 ]; then
+      echo "npm install failed"; 
+      exit 1; 
+    fi
     npm run build
   displayName: 'Install dependencies and build'
-  
-
 
 - task: PublishBuildArtifacts@1
   inputs:
@@ -24,3 +25,8 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
   displayName: 'Publish Artifacts'
+
+- script: |
+    echo "Build and artifact publishing successful!"
+    echo "Access the app at http://localhost:3000"
+  displayName: 'Display localhost link'
