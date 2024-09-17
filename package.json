@@ -4,8 +4,9 @@
   "description": "Running a simple Node.js App on Azure DevOps",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "build": "node build.js"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
